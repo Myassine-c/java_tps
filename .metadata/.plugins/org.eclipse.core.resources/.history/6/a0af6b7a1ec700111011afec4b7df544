@@ -1,0 +1,100 @@
+
+public class Date {
+	private int month;
+	private int day;
+	private int year;
+	
+	public Date(int month, int day, int year)
+	{
+		this.month = month;
+		this.day = day;
+		this.year = year;
+	}
+	
+	public boolean isvalid(int d,int m,int y)
+	{
+		if(d < 1 || d > 31) return false;
+		if(m < 1 || m > 12) return false;
+		if(y < 0) return false;
+		return true;
+	}
+	public int getday()
+	{
+		return this.day;
+	}
+	public int getmonth()
+	{
+		return this.month;
+	}
+	public int getyear()
+	{
+		return this.year;
+	}
+	public boolean isAfter(Date that)
+	{
+		return compareTo(that) > 0;
+	}
+	public boolean isBefore(Date that)
+	{
+		return compareTo(that) < 0;
+	}
+	public int compareTo(Date that)
+	{
+		if (this.year < that.year) return -1;
+		if (this.year > that.year) return 1;
+		if (this.month < that.month) return -1;
+		if (this.month > that.month) return 1;
+		if (this.day > that.day) return 1;
+		if (this.day < that.day) return -1;
+		return 0;
+	}
+	
+	public String toString()
+	{
+		return this.day + "/" + this.month + "/" + this.year;
+	}
+	
+	
+	public class Main {
+
+	    public static void main(String[] args) {
+	        
+	        System.out.println("=== DEBUT DES TESTS DE LA CLASSE DATE ===");
+	        
+	        // 1. Création de quelques objets Date
+	        Date date1 = new Date(15, 10, 2023); // 15 Octobre 2023
+	        Date date2 = new Date(15, 10, 2023); // La même date que date1
+	        Date date3 = new Date(1, 1, 2024);   // 1 Janvier 2024 (plus tard)
+	        
+			/*
+			 * // 2. Test de la validité (en utilisant la méthode du prof)
+			 * System.out.println("\n--- Test de Validité ---"); boolean testValide =
+			 * date1.isvalid(15, 10, 2023); boolean testFaux = date1.isvalid(35, 13, -5); //
+			 * Date absurde System.out.println("Le 15/10/2023 est valide ? " + testValide);
+			 * System.out.println("Le 35/13/-5 est valide ? " + testFaux);
+			 * 
+			 * // 3. Test de compareTo System.out.println("\n--- Test de compareTo ---");
+			 * System.out.println("Comparaison date1 et date2 (identiques) : " +
+			 * date1.compareTo(date2));
+			 * System.out.println("Comparaison date1 et date3 (date1 est avant) : " +
+			 * date1.compareTo(date3));
+			 * System.out.println("Comparaison date3 et date1 (date3 est après) : " +
+			 * date3.compareTo(date1));
+			 * 
+			 * // 4. Test des méthodes pratiques isBefore et isAfter
+			 * System.out.println("\n--- Test de isBefore et isAfter ---");
+			 * 
+			 * if (date1.isBefore(date3)) {
+			 * System.out.println("Succès : date1 est bien AVANT date3 !"); } else
+			 * System.out.println("date1 is not before date3");
+			 * 
+			 * if (date3.isAfter(date1)) {
+			 * System.out.println("Succès : date3 est bien APRES date1 !"); } else
+			 * System.out.println("date3 is not after date1");
+			 * 
+			 * System.out.println("=== FIN DES TESTS ===");
+			 */
+	        System.out.println(date1);
+	    }
+	}
+}

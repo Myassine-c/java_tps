@@ -3,6 +3,7 @@ public class Date {
 	private int day;
 	private int year;
 	
+	//definir les constructeur
 	public Date(int day, int month, int year)
 	{
 		if (!isvalid(day, month, year))
@@ -49,14 +50,14 @@ public class Date {
 	{
 		return compareTo(that) < 0;
 	}
-	public int compareTo(Date that)
+	public int compareTo(Date mohamed)
 	{
-		if (this.year < that.year) return -1;
-		if (this.year > that.year) return 1;
-		if (this.month < that.month) return -1;
-		if (this.month > that.month) return 1;
-		if (this.day > that.day) return 1;
-		if (this.day < that.day) return -1;
+		if (this.year < mohamed.year) return -1;
+		if (this.year > mohamed.year) return 1;
+		if (this.month < mohamed.month) return -1;
+		if (this.month > mohamed.month) return 1;
+		if (this.day > mohamed.day) return 1;
+		if (this.day < mohamed.day) return -1;
 		return 0;
 	}
 	
@@ -72,5 +73,19 @@ public class Date {
 		if (dt == null)
 			return false;
 		return year == dt.year;
+	}
+
+    public static void main(String[] args) {
+        Date d1 = new Date(28, 10, 2026);
+        Date d2 = new Date(2026);
+
+        System.out.println("Date 1 : " + d1);
+        System.out.println("Date 2 : " + d2);
+
+        if (d1.isAfter(d2)) {
+            System.out.println(d1 + " est après " + d2);
+        } else {
+            System.out.println(d1 + " est avant ou égale à " + d2);
+        }
 	}
 }

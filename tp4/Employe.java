@@ -5,9 +5,9 @@ import java.util.function.Function;
 
 
 
-public class Employe {
+public class Employe implements Comparable<Employe>, Cloneable{
     private String code;
-    private double salaire;
+    private Double salaire;
 
     public String getCode(){return code;}
     public double getSalaire(){return salaire;}
@@ -17,5 +17,19 @@ public class Employe {
         this.code = code;
         this.salaire = salaire;
     }
-    
+    @Override 
+    public Employe clone()
+    {
+        try {
+            return (Employe) super.clone();
+        } catch (CloneNotSupportedException ex)
+        {
+            throw new AssertionError(ex);
+        }
+    }
+    @Override 
+    public int compareTo(Employe e)
+    {
+        return this.salaire.compareTo(e.salaire);
+    }
 }

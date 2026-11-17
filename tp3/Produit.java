@@ -31,12 +31,9 @@ public class Produit implements Comparable<Produit> {
 
         if (this == obj)
             return true;
-
         if (obj == null || getClass() != obj.getClass())
             return false;
-
         Produit other = (Produit) obj;
-
         return Objects.equals(this.code, other.code);
     }
 

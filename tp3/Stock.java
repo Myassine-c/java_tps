@@ -23,10 +23,6 @@ public class Stock extends LinkedList<Produit>{
             Produit ref = new Produit("",d);
             if (isEmpty())
                 return null;
-<<<<<<< Updated upstream
-=======
-            
->>>>>>> Stashed changes
         }
     }
 

@@ -16,15 +16,21 @@ public class Stock extends LinkedList<Produit>{
         Produit m = get(0);
         for (Produit x:this)
         {
-            if (x.estAncien(m))
+            if (x.plusAncien(m))
                 m = x;
         }
-        public Stock sontPerimes(Date d){
-            Produit ref = new Produit("",d);
-            if (isEmpty())
-                return null;
-        }
+        return m;
     }
-
-    
+    public Stock sontPerimes(Date d){
+        if (isEmpty())
+            return null;
+        Stock perimes = new Stock();
+        Produit ref = new Produit("",d);
+        for (Produit p : this)
+        {
+            if (p.plusAncien(ref))
+                perimes.add(p);
+        }
+        return perimes;
+    }
 }
